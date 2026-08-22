@@ -32,8 +32,8 @@ export default function HeroSection() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <AppImage
-          src="/assets/images/hero-classroom.webp"
-          alt="Bright classroom environment with students engaged in learning, warm natural light"
+          src="/assets/images/hero-classroom.jpeg"
+          alt="Stellah supporting students during a computer lesson"
           fill
           priority
           unoptimized

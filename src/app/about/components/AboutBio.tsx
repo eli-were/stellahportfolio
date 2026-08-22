@@ -38,8 +38,8 @@ export default function AboutBio() {
         <div ref={leftRef} className="relative">
           <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/10">
             <AppImage
-              src="/assets/images/about-portrait.webp"
-              alt="Professional female educator in a bright office setting, confident and authoritative pose, warm natural light"
+              src="/assets/images/about-potrait.jpeg"
+              alt="Stellah Akuku Were at a community event in Nairobi"
               fill
               unoptimized
               className="object-cover"

@@ -11,10 +11,8 @@ const highlights = [
   title: 'Perfect KCSE Score',
   description:
   'Produced an A grade 12.00 in KCSE 2023 with 30 Computer Studies candidates at Starehe Boys Centre — through inquiry-based learning and data-driven personalized feedback.',
-  image:
-  "/assets/images/highlight-kcse.webp",
-  imageAlt:
-  'Students in a bright classroom working on computers, focused and engaged, well-lit academic environment',
+  image: '/assets/images/highlight-kcse.jpeg',
+  imageAlt: 'Stellah receiving a certificate of merit at Starehe Boys Centre',
   link: '/experience',
   linkLabel: 'See Experience'
 },
@@ -24,10 +22,8 @@ const highlights = [
   title: 'IoT & Robotics Trainer',
   description:
   'Launched and spearheaded the Internet of Things club at Starehe Boys, delivering hands-on robotics sessions and fostering critical thinking across STEM technologies.',
-  image:
-  "/assets/images/highlight-robotics.webp",
-  imageAlt:
-  'Young students working with robotics components and circuit boards in a STEM lab, bright educational setting',
+  image: '/assets/images/highlight-robotic.jpeg',
+  imageAlt: 'Student building and programming a robotics project in a computer lab',
   link: '/skills-certifications',
   linkLabel: 'View Skills'
 },
@@ -37,10 +33,8 @@ const highlights = [
   title: 'Walimu-Tech Member',
   description:
   'Active member of the Walimu-Tech Platform by Chipurobo — a national community of teachers integrating Robotics, AI, and coding in Kenyan schools.',
-  image:
-  "/assets/images/highlight-community.webp",
-  imageAlt:
-  'Teachers collaborating around a table with laptops and teaching materials, professional development workshop',
+  image: '/assets/images/highlight-community.jpeg',
+  imageAlt: 'Stellah celebrating with students and fellow community members',
   link: '/contact',
   linkLabel: 'Connect'
 }];
