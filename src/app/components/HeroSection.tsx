@@ -36,7 +36,6 @@ export default function HeroSection() {
           alt="Stellah supporting students during a computer lesson"
           fill
           priority
-          unoptimized
           className="object-cover object-center"
           sizes="100vw" />
 

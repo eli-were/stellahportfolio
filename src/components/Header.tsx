@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import AppLogo from '@/components/ui/AppLogo';
 
 const navLinks = [
@@ -13,8 +14,14 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Keep the primary destinations ready before visitors select a navigation link.
+  useEffect(() => {
+    navLinks.forEach(({ href }) => router.prefetch(href));
+  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -45,7 +52,7 @@ export default function Header() {
             }`}
           >
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group">
+            <Link href="/" prefetch className="flex items-center gap-2.5 group">
               <AppLogo
                 size={36}
                 onClick={() => {}}
@@ -61,6 +68,7 @@ export default function Header() {
                 <Link
                   key={link?.href}
                   href={link?.href}
+                  prefetch
                   className="hover:text-primary transition-colors duration-200 relative group"
                 >
                   {link?.label}
@@ -73,6 +81,7 @@ export default function Header() {
             <div className="hidden md:flex items-center gap-3">
               <Link
                 href="/contact"
+                prefetch
                 className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-primary/20"
               >
                 Get in Touch
@@ -116,6 +125,7 @@ export default function Header() {
             <Link
               key={link?.href}
               href={link?.href}
+              prefetch
               onClick={() => setMenuOpen(false)}
               className="font-display text-3xl font-semibold text-foreground hover:text-primary transition-colors duration-200"
               style={{ transitionDelay: `${i * 60}ms` }}
@@ -125,6 +135,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
+            prefetch
             onClick={() => setMenuOpen(false)}
             className="mt-4 bg-primary text-primary-foreground px-8 py-3.5 rounded-full text-base font-semibold hover:bg-primary/90 transition-all"
           >

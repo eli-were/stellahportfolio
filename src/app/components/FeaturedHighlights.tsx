@@ -104,7 +104,6 @@ export default function FeaturedHighlights() {
                 src={item.image}
                 alt={item.imageAlt}
                 fill
-                unoptimized
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, 33vw" />
 

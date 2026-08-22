@@ -41,7 +41,6 @@ export default function AboutBio() {
               src="/assets/images/about-potrait.jpeg"
               alt="Stellah Akuku Were at a community event in Nairobi"
               fill
-              unoptimized
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw" />
 
