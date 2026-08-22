@@ -4,7 +4,7 @@ import AppImage from '@/components/ui/AppImage';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col" aria-label="Hero">
+    <section className="relative min-h-screen flex flex-col overflow-hidden" aria-label="Hero">
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <AppImage
