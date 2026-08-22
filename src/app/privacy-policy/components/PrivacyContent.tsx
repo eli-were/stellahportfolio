@@ -44,7 +44,7 @@ const sections = [
   },
   {
     id: 'contact',title: '10. Contact Us',
-    content: `If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please contact:\n\nStellah Akuku Were\nEmail: stellahakuku@gmail.com\nPhone: +254 7990 70 299\nNairobi, Kenya`,
+    content: `If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please contact:\n\nStellah Akuku Were\nEmail: stellahakuku@gmail.com\nPhone: +254 799 070 299\nNairobi, Kenya`,
   },
 ];
 

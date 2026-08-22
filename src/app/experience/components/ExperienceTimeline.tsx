@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const experiences = [
   {
@@ -12,7 +10,7 @@ const experiences = [
     current: true,
     color: 'primary',
     responsibilities: [
-      'Launched and spearheaded Mathematics club, fostering student interest in emerging technologies for problem solving and innovation beyond the classroom.',
+      'Started a Mathematics club that gives students more opportunities to solve problems and explore technology.',
       'Teaching Computer Studies and Mathematics to Form 1–4 learners within the CBC curriculum framework.',
       'Delivering Tech & Robotics training sessions to develop critical thinking and STEM skills.',
     ],
@@ -24,12 +22,12 @@ const experiences = [
     location: 'General Waruinge Street, Starehe, Nairobi',
     role: 'Head of Studies — Computer Science Department & Teacher of Mathematics F1–F4',
     period: 'August 2022 – 2025',
-    current: true,
+    current: false,
     color: 'accent',
     highlight: 'Perfect KCSE Score — A grade 12.00 (2023)',
     responsibilities: [
       'Produced a perfect score — A grade 12.00 — in KCSE 2023 with 30 Computer Studies candidates through inquiry-based learning and data-driven personalized feedback.',
-      'Launched and spearheaded the Internet of Things (IoT) club, fostering student interest in emerging technologies and innovation beyond the classroom.',
+      'Started the Internet of Things (IoT) club and introduced students to emerging technologies.',
       'Delivered hands-on robotics and IoT training sessions, fostering critical thinking and problem-solving skills across STEM technologies.',
       'Provided inquiry-based learning opportunities with personalized feedback through continuous assessment techniques.',
     ],
@@ -37,7 +35,7 @@ const experiences = [
   },
   {
     id: 3,
-    school: "Mang\'u High School",
+    school: "Mang'u High School",
     location: 'Thika, Kiambu',
     role: 'Mathematics and Computer Studies Teacher F1–F4',
     period: 'May 2021 – January 2022',
@@ -82,28 +80,6 @@ const experiences = [
 ];
 
 export default function ExperienceTimeline() {
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    refs.current.forEach((el) => {
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
-
   return (
     <section className="py-20 px-4 sm:px-6 bg-background" aria-labelledby="experience-heading">
       <div className="max-w-4xl mx-auto">
@@ -116,22 +92,16 @@ export default function ExperienceTimeline() {
           <div className="absolute left-5 top-6 bottom-0 w-0.5 bg-gradient-to-b from-primary/40 via-border to-transparent hidden sm:block" />
 
           <div className="flex flex-col gap-10">
-            {experiences.map((exp, i) => (
+            {experiences.map((exp) => (
               <div
                 key={exp.id}
-                ref={(el) => { refs.current[i] = el; }}
                 className="relative sm:pl-16"
-                style={{
-                  opacity: 0,
-                  transform: 'translateY(24px)',
-                  transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${i * 80}ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${i * 80}ms`,
-                }}
               >
                 {/* Timeline dot */}
                 <div
                   className={`absolute left-3 top-5 w-5 h-5 rounded-full border-2 hidden sm:flex items-center justify-center ${
                     exp.current
-                      ? 'bg-primary border-primary' :'bg-card border-border'
+                      ? 'bg-primary border-primary' : 'bg-card border-border'
                   }`}
                   style={{ zIndex: 1 }}
                 >

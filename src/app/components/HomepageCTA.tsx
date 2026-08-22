@@ -1,38 +1,11 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 export default function HomepageCTA() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref?.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    obs?.observe(el);
-    return () => obs?.disconnect();
-  }, []);
-
   return (
     <section className="py-24 px-4 sm:px-6 bg-secondary" aria-label="Call to action">
       <div className="max-w-4xl mx-auto text-center">
         <div
-          ref={ref}
-          style={{
-            opacity: 0,
-            transform: 'translateY(28px)',
-            transition: 'opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1)',
-          }}
         >
           <p className="text-xs font-bold uppercase tracking-widest text-accent mb-4">
             Open to Opportunities

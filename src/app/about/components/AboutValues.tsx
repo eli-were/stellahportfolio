@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const values = [
   {
@@ -9,8 +7,8 @@ const values = [
         <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: 'Dual Expertise',
-    desc: 'One of the few educators certified in both Mathematics and Computer Science — bridging analytical thinking and digital innovation.',
+    title: 'Two Subjects, One Approach',
+    desc: 'Teaching Mathematics alongside Computer Science, with lessons that make room for both clear thinking and practical work.',
   },
   {
     icon: (
@@ -19,7 +17,7 @@ const values = [
       </svg>
     ),
     title: 'Proven Results',
-    desc: 'A perfect KCSE score of A grade 12.00 with 30 candidates — achieved through data-driven, personalized teaching methods.',
+    desc: 'Thirty Computer Studies candidates earned an A grade of 12.00 in KCSE 2023 through steady practice, feedback, and close support.',
   },
   {
     icon: (
@@ -28,7 +26,7 @@ const values = [
       </svg>
     ),
     title: 'Community Builder',
-    desc: 'From launching IoT clubs to joining Walimu-Tech — actively growing Kenya\'s STEM teaching ecosystem.',
+    desc: 'Supports clubs, workshops, and teacher communities that help more learners take part in STEM.',
   },
   {
     icon: (
@@ -37,37 +35,11 @@ const values = [
       </svg>
     ),
     title: 'Real-World Application',
-    desc: 'Integrates tools like Curipod, Google Classroom, and Zeraki to connect classroom learning with industry-relevant skills.',
+    desc: 'Uses tools such as Google Classroom, Curipod, and Zeraki where they make learning clearer and more useful.',
   },
 ];
 
 export default function AboutValues() {
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    refs.current.forEach((el, i) => {
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              if (el) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-              }
-            }, i * 100);
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
-
   return (
     <section className="py-20 px-4 sm:px-6 bg-secondary" aria-labelledby="values-heading">
       <div className="max-w-7xl mx-auto">
@@ -80,12 +52,10 @@ export default function AboutValues() {
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v, i) => (
+          {values.map((v) => (
             <div
               key={v.title}
-              ref={(el) => { refs.current[i] = el; }}
               className="bg-card rounded-2xl p-6 border border-border hover-lift flex flex-col gap-4"
-              style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)' }}
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/15">
                 {v.icon}

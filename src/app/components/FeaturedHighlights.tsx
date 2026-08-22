@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 
@@ -41,32 +39,6 @@ const highlights = [
 
 
 export default function FeaturedHighlights() {
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    refs.current.forEach((el, i) => {
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              if (el) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-              }
-            }, i * 120);
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.15 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
-
   return (
     <section className="py-24 px-4 sm:px-6 bg-background" aria-labelledby="highlights-heading">
       <div className="max-w-7xl mx-auto">
@@ -91,12 +63,11 @@ export default function FeaturedHighlights() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          {highlights.map((item, i) =>
+          {highlights.map((item) =>
           <div
             key={item.title}
-            ref={(el) => {refs.current[i] = el;}}
             className="group flex flex-col rounded-3xl overflow-hidden bg-card border border-border hover-lift"
-            style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1)' }}>
+          >
 
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">

@@ -178,8 +178,15 @@
   }
 
   .tag-accent {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     background: rgba(200, 150, 90, 0.1);
     color: #8B5E2A;
-    border-color: rgba(200, 150, 90, 0.25);
+    border: 1px solid rgba(200, 150, 90, 0.25);
   }
 }

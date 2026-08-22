@@ -47,6 +47,13 @@ export default function ContactContent() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(
+      `[Portfolio] ${formData.subject || 'General Enquiry'} — ${formData.name}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nOrganisation: ${formData.organisation || 'N/A'}\nSubject: ${formData.subject}\n\n${formData.message}`
+    );
+    window.open(`mailto:stellahakuku@gmail.com?subject=${subject}&body=${body}`, '_self');
     setSubmitted(true);
   };
 
@@ -88,7 +95,7 @@ export default function ContactContent() {
                   </svg>,
 
               label: 'Phone',
-              value: '+254 7990 70 299',
+              value: '+254 799 070 299',
               href: 'tel:+254799070299'
             },
             {

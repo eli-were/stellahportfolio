@@ -1,41 +1,12 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import AppImage from '@/components/ui/AppImage';
 
 export default function AboutBio() {
-  const leftRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const items = [
-    { el: leftRef?.current, dir: 'left' },
-    { el: rightRef?.current, dir: 'right' }];
-
-    items?.forEach(({ el, dir }) => {
-      if (!el) return;
-      el.style.opacity = '0';
-      el.style.transform = dir === 'left' ? 'translateX(-28px)' : 'translateX(28px)';
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            el.style.transition = 'opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1)';
-            el.style.opacity = '1';
-            el.style.transform = 'translateX(0)';
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.15 }
-      );
-      obs?.observe(el);
-    });
-  }, []);
-
   return (
     <section className="py-24 px-4 sm:px-6 bg-background" aria-labelledby="bio-heading">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         {/* Left: Photo + Quote card */}
-        <div ref={leftRef} className="relative">
+        <div className="relative">
           <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/10">
             <AppImage
               src="/assets/images/about-potrait.jpeg"
@@ -57,7 +28,7 @@ export default function AboutBio() {
         </div>
 
         {/* Right: Bio text */}
-        <div ref={rightRef} className="flex flex-col justify-between gap-10">
+        <div className="flex flex-col justify-between gap-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-accent mb-4">
               Professional Bio
@@ -76,11 +47,10 @@ export default function AboutBio() {
                 the University of Nairobi.
               </p>
               <p>
-                Her rare dual expertise spans both the analytical rigor of Mathematics and the
-                practical innovation of Computer Science — including Python, Arduino, IoT, and Generative AI.
-                She is deeply versed in Kenya&apos;s <strong className="text-foreground">Competence-Based Education (CBC)</strong> curriculum
-                and has led transformative initiatives including an IoT club and IBM SkillsBuild
-                facilitation.
+                Her work combines Mathematics with practical Computer Science skills, including
+                Python, Arduino, IoT, and generative AI. She works within Kenya&apos;s{' '}
+                <strong className="text-foreground">Competence-Based Education (CBC)</strong> curriculum and has
+                supported an IoT club and IBM SkillsBuild sessions.
               </p>
               <p>
                 In 2023, her 30 Computer Studies candidates at Starehe Boys Centre achieved a{' '}
@@ -89,9 +59,8 @@ export default function AboutBio() {
                 Commission and an active advocate for child online protection and digital literacy.
               </p>
               <p>
-                Stellah seeks to advance her career in an international or NGO setting where she can
-                leverage her expertise to make a profound impact on students&apos; lives and
-                institutional STEM outcomes.
+                Stellah is open to international school and NGO roles where she can support
+                students and strengthen STEM programmes.
               </p>
             </div>
           </div>

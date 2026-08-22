@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Mathematics & Computer Science Teacher · Tech & Robotics Trainer · Nairobi, Kenya
+              Mathematics &amp; Computer Science Teacher · Tech &amp; Robotics Trainer · Nairobi, Kenya
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-1">
@@ -92,7 +92,7 @@ export default function Footer() {
                   stellahakuku@gmail.com
                 </a>
                 <a href="tel:+254799070299" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                  +254 7990 70 299
+                  +254 799 070 299
                 </a>
                 <span className="text-sm text-muted-foreground">Nairobi, Kenya</span>
               </div>
