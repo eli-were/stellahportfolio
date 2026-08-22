@@ -1,8 +1,8 @@
-import { imageHosts } from './image-hosts.config.mjs';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  productionBrowserSourceMaps: true,
+  // Source maps are useful for debugging, but are large files that do not need
+  // to be published with a public portfolio.
+  productionBrowserSourceMaps: false,
   distDir: process.env.DIST_DIR || '.next',
   typescript: {
     ignoreBuildErrors: true,
@@ -11,35 +11,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    remotePatterns: imageHosts,
-    minimumCacheTTL: 60,
+    // Keep optimized local images in the cache for a week.
+    minimumCacheTTL: 60 * 60 * 24 * 7,
     qualities: [75, 85, 100],
-  },
-  webpack(
-    config,
-    {
-      dev: dev
-    }
-  ) {
-    if (dev) {
-      config.module.rules.push({
-        test: /\.(jsx|tsx)$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: '@dhiwise/component-tagger/nextLoader',
-        }],
-      });
-      const ignoredPaths = (process.env.WATCH_IGNORED_PATHS || '')
-        .split(',')
-        .map((p) => p.trim())
-        .filter(Boolean);
-      config.watchOptions = {
-        ignored: ignoredPaths.length
-          ? ignoredPaths.map((p) => `**/${p.replace(/^\/+|\/+$/g, '')}/**`)
-          : undefined,
-      };
-    }
-    return config;
   },
 };
 export default nextConfig;

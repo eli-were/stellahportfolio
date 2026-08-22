@@ -44,8 +44,9 @@ const AppImage = memo(function AppImage({
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    const isExternalUrl = useMemo(() => typeof imageSrc === 'string' && imageSrc.startsWith('http'), [imageSrc]);
-    const resolvedUnoptimized = unoptimized || isExternalUrl;
+    // Remote hosts are allow-listed in next.config.mjs, so Next can resize,
+    // serve modern formats, and cache them just like local images.
+    const resolvedUnoptimized = unoptimized;
 
     const handleError = useCallback(() => {
         if (!hasError && imageSrc !== fallbackSrc) {

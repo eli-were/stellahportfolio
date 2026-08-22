@@ -1,6 +1,6 @@
-# Next.js
+# Stellah Were Portfolio
 
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
+A personal portfolio for Stellah Akuku Were, a Mathematics and ICT teacher, STEM trainer, and robotics educator based in Nairobi, Kenya.
 
 ## 🚀 Features
 
@@ -59,7 +59,7 @@ This project uses Tailwind CSS for styling with the following features:
 
 - `npm run dev` - Start development server on port 4028
 - `npm run build` - Build the application for production
-- `npm run start` - Start the development server
+- `npm run start` - Start the production server after building
 - `npm run serve` - Start the production server
 - `npm run lint` - Run ESLint to check code quality
 - `npm run lint:fix` - Fix ESLint issues automatically
@@ -84,8 +84,7 @@ You can check out the [Next.js GitHub repository](https://github.com/vercel/next
 
 ## 🙏 Acknowledgments
 
-- Built with [Rocket.new](https://rocket.new)
 - Powered by Next.js and React
 - Styled with Tailwind CSS
 
-Built with ❤️ on Rocket.new
+Maintained as a locally owned personal portfolio.

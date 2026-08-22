@@ -38,9 +38,10 @@ export default function AboutBio() {
         <div ref={leftRef} className="relative">
           <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/10">
             <AppImage
-              src="https://img.rocket.new/generatedImages/rocket_gen_img_1978c955e-1763294317570.png"
+              src="/assets/images/about-portrait.webp"
               alt="Professional female educator in a bright office setting, confident and authoritative pose, warm natural light"
               fill
+              unoptimized
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw" />
 

@@ -32,10 +32,11 @@ export default function HeroSection() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <AppImage
-          src="https://img.rocket.new/generatedImages/rocket_gen_img_1909ae87c-1780898540730.png"
+          src="/assets/images/hero-classroom.webp"
           alt="Bright classroom environment with students engaged in learning, warm natural light"
           fill
           priority
+          unoptimized
           className="object-cover object-center"
           sizes="100vw" />
 

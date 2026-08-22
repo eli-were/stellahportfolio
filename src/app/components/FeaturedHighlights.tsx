@@ -12,7 +12,7 @@ const highlights = [
   description:
   'Produced an A grade 12.00 in KCSE 2023 with 30 Computer Studies candidates at Starehe Boys Centre — through inquiry-based learning and data-driven personalized feedback.',
   image:
-  "https://img.rocket.new/generatedImages/rocket_gen_img_1314f5703-1769242799088.png",
+  "/assets/images/highlight-kcse.webp",
   imageAlt:
   'Students in a bright classroom working on computers, focused and engaged, well-lit academic environment',
   link: '/experience',
@@ -25,7 +25,7 @@ const highlights = [
   description:
   'Launched and spearheaded the Internet of Things club at Starehe Boys, delivering hands-on robotics sessions and fostering critical thinking across STEM technologies.',
   image:
-  "https://img.rocket.new/generatedImages/rocket_gen_img_1a31b673a-1769234603018.png",
+  "/assets/images/highlight-robotics.webp",
   imageAlt:
   'Young students working with robotics components and circuit boards in a STEM lab, bright educational setting',
   link: '/skills-certifications',
@@ -38,7 +38,7 @@ const highlights = [
   description:
   'Active member of the Walimu-Tech Platform by Chipurobo — a national community of teachers integrating Robotics, AI, and coding in Kenyan schools.',
   image:
-  "https://img.rocket.new/generatedImages/rocket_gen_img_18036ed6c-1767310260817.png",
+  "/assets/images/highlight-community.webp",
   imageAlt:
   'Teachers collaborating around a table with laptops and teaching materials, professional development workshop',
   link: '/contact',
@@ -110,6 +110,7 @@ export default function FeaturedHighlights() {
                 src={item.image}
                 alt={item.imageAlt}
                 fill
+                unoptimized
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, 33vw" />
 
