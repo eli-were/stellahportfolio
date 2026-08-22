@@ -71,14 +71,14 @@ export default function AboutBio() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Stellah is a Mathematics and ICT teacher with over 4 years of experience working
+                Stellah is a Mathematics and Computer Science teacher with over 4 years of experience working
                 with Form 1–4 (Year 9–12) learners in Kenya&apos;s top secondary schools. She holds
-                a <strong className="text-foreground">Bachelor of Education in ICT & Mathematics</strong> from
+                a <strong className="text-foreground">Bachelor of Education in Computer Science & Mathematics</strong> from
                 the University of Nairobi.
               </p>
               <p>
                 Her rare dual expertise spans both the analytical rigor of Mathematics and the
-                practical innovation of ICT — including Python, Arduino, IoT, and Generative AI.
+                practical innovation of Computer Science — including Python, Arduino, IoT, and Generative AI.
                 She is deeply versed in Kenya&apos;s <strong className="text-foreground">Competence-Based Education (CBC)</strong> curriculum
                 and has led transformative initiatives including an IoT club and IBM SkillsBuild
                 facilitation.
@@ -102,7 +102,7 @@ export default function AboutBio() {
             {[
             { label: 'Location', value: 'Nairobi, Kenya' },
             { label: 'Curriculum', value: 'KCSE & CBC' },
-            { label: 'Subjects', value: 'Mathematics & ICT' },
+            { label: 'Subjects', value: 'Mathematics & Computer Science' },
             { label: 'Specialisation', value: 'IoT & Robotics' }]?.
             map((fact) =>
             <div key={fact?.label} className="bg-secondary rounded-xl p-4 border border-border">

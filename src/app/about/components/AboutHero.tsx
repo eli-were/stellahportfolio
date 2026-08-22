@@ -10,7 +10,7 @@ export default function AboutHero() {
           <span className="italic font-normal text-primary">with the Real World.</span>
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
-          Stellah Akuku Were is a Mathematics & ICT teacher and Tech & Robotics Trainer based in
+          Stellah Akuku Were is a Mathematics & Computer Science teacher and Tech & Robotics Trainer based in
           Nairobi, Kenya — dedicated to empowering students through practical, technology-integrated
           education.
         </p>

@@ -24,20 +24,20 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'Stellah Akuku Were — Mathematics & ICT Teacher, Robotics Trainer',
+  title: 'Stellah Akuku Were — Mathematics & Computer Science Teacher, Robotics Trainer',
   description:
-    'Professional portfolio of Stellah Akuku Were, a Mathematics & ICT teacher and Tech & Robotics Trainer based in Nairobi, Kenya with 4+ years of proven results.',
+    'Professional portfolio of Stellah Akuku Were, a Mathematics & Computer Science teacher and Tech & Robotics Trainer based in Nairobi, Kenya with 4+ years of proven results.',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
   openGraph: {
-    title: 'Stellah Akuku Were — Mathematics & ICT Teacher',
+    title: 'Stellah Akuku Were — Mathematics & Computer Science Teacher',
     description: 'Educator, Robotics Trainer, and STEM advocate based in Nairobi, Kenya.',
     images: [{ url: '/assets/images/app_logo.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stellah Akuku Were — Mathematics & ICT Teacher',
+    title: 'Stellah Akuku Were — Mathematics & Computer Science Teacher',
     description: 'Educator, Robotics Trainer, and STEM advocate based in Nairobi, Kenya.',
   },
 };

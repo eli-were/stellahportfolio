@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/experience' },
   openGraph: {
     title: 'Teaching Experience — Stellah Akuku Were',
-    description: 'Over 4 years of Mathematics & ICT teaching across top Kenyan secondary schools.',
+    description: 'Over 4 years of Mathematics & Computer Science teaching across top Kenyan secondary schools.',
     images: [{ url: '/assets/images/app_logo.png', width: 1200, height: 630 }],
   },
 };

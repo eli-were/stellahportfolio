@@ -9,11 +9,11 @@ import AboutValues from '@/app/about/components/AboutValues';
 export const metadata: Metadata = {
   title: 'About Stellah Akuku Were — Educator & Robotics Trainer',
   description:
-    'Learn about Stellah Akuku Were — a Mathematics and ICT teacher with 4+ years experience, dual expertise, and a passion for bridging classroom learning with real-life STEM application.',
+    'Learn about Stellah Akuku Were — a Mathematics and Computer Science teacher with 4+ years experience, dual expertise, and a passion for bridging classroom learning with real-life STEM application.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Stellah Akuku Were',
-    description: 'Mathematics & ICT educator based in Nairobi, Kenya. Dual expertise, proven results.',
+    description: 'Mathematics & Computer Science educator based in Nairobi, Kenya. Dual expertise, proven results.',
     images: [{ url: '/assets/images/app_logo.png', width: 1200, height: 630 }],
   },
 };

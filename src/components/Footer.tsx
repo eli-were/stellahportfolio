@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Mathematics & ICT Teacher · Tech & Robotics Trainer · Nairobi, Kenya
+              Mathematics & Computer Science Teacher · Tech & Robotics Trainer · Nairobi, Kenya
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-1">

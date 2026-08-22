@@ -10,7 +10,7 @@ const values = [
       </svg>
     ),
     title: 'Dual Expertise',
-    desc: 'One of the few educators certified in both Mathematics and ICT — bridging analytical thinking and digital innovation.',
+    desc: 'One of the few educators certified in both Mathematics and Computer Science — bridging analytical thinking and digital innovation.',
   },
   {
     icon: (

@@ -51,7 +51,7 @@ export default function EducationSection() {
                 Bachelor of Education
               </p>
               <h3 className="font-display text-xl font-bold text-foreground tracking-tight mb-1">
-                ICT & Mathematics
+                Computer Science & Mathematics
               </h3>
               <p className="text-sm font-semibold text-primary mb-1">University of Nairobi</p>
               <p className="text-xs text-muted-foreground mb-4">Nairobi, Kenya · September 2017</p>

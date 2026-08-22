@@ -70,7 +70,7 @@ export default function HeroSection() {
           className="font-display text-hero-xl font-bold text-white tracking-tight max-w-4xl mb-6">
 
           Mathematics.{' '}
-          <span className="italic font-normal" style={{ color: 'var(--accent)' }}>ICT.</span>
+          <span className="italic font-normal" style={{ color: 'var(--accent)' }}>Computer Science.</span>
           <br />
           Robotics.{' '}
           <span className="italic font-normal text-white/80">Results.</span>
