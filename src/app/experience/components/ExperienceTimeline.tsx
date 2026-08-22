@@ -23,7 +23,7 @@ const experiences = [
     school: 'Starehe Boys Centre & School',
     location: 'General Waruinge Street, Starehe, Nairobi',
     role: 'Head of Studies — Computer Science Department & Teacher of Mathematics F1–F4',
-    period: 'August 2022 – Present',
+    period: 'August 2022 – 2025',
     current: true,
     color: 'accent',
     highlight: 'Perfect KCSE Score — A grade 12.00 (2023)',
