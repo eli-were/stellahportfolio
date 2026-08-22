@@ -72,8 +72,7 @@ export default function HeroSection() {
           Mathematics.{' '}
           <span className="italic font-normal" style={{ color: 'var(--accent)' }}>Computer Science.</span>
           <br />
-          Robotics.{' '}
-          <span className="italic font-normal text-white/80">Results.</span>
+          Robotics.
         </h1>
 
         {/* Subheadline */}
