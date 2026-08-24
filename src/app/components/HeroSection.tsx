@@ -52,8 +52,9 @@ export default function HeroSection() {
         <p
           className="text-white/80 text-lg md:text-xl font-medium leading-relaxed max-w-xl mb-10">
 
-          Educator, STEM trainer, and tech advocate with 4+ years shaping Kenya&apos;s next generation — from Starehe Boys to IoT clubs to a{' '}
-          <span className="text-white font-semibold">perfect KCSE score.</span>
+          Educator, STEM trainer, and tech advocate with 4+ years of shaping Kenya&apos;s next generation — from Mang&apos;u National School, to  Starehe Boys to Riara group of school&apos;s to a{' '}
+      
+          <span className="text-white font-semibold">National Examination.</span>
         </p>
 
         {/* CTAs */}

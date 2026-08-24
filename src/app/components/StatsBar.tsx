@@ -4,7 +4,7 @@ const stats = [
   { value: '4+', label: 'Years Experience', sub: 'Form 1–4 learners' },
   { value: '160+', label: 'Students Trained', sub: 'IoT & Robotics' },
   { value: 'A 12.00', label: 'KCSE 2023 Score', sub: '30 candidates, perfect grade' },
-  { value: '3', label: 'Schools Served', sub: 'Nairobi & Kiambu' },
+  { value: '4', label: 'Schools Served', sub: 'Nairobi County' },
 ];
 
 export default function StatsBar() {
