@@ -24,14 +24,14 @@ const experiences = [
     period: 'August 2022 – 2025',
     current: false,
     color: 'accent',
-    highlight: 'Perfect KCSE Score — A grade 12.00 (2023)',
+    highlight: 'Perfect National Examination Score — A grade 12.00 (2023)',
     responsibilities: [
-      'Produced a perfect score — A grade 12.00 — in KCSE 2023 with 30 Computer Studies candidates through inquiry-based learning and data-driven personalized feedback.',
+      'Produced a perfect National Examination score — A grade 12.00 — in the National Examination 2023 with 30 Computer Studies candidates through inquiry-based learning and data-driven personalized feedback.',
       'Started the Internet of Things (IoT) club and introduced students to emerging technologies.',
       'Delivered hands-on robotics and IoT training sessions, fostering critical thinking and problem-solving skills across STEM technologies.',
       'Provided inquiry-based learning opportunities with personalized feedback through continuous assessment techniques.',
     ],
-    tags: ['Head of Department', 'IoT Club', 'KCSE', 'Mathematics', 'Computer Science'],
+    tags: ['Head of Department', 'IoT Club', 'National Examination', 'Mathematics', 'Computer Science'],
   },
   {
     id: 3,
