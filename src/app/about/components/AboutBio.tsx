@@ -54,7 +54,7 @@ export default function AboutBio() {
               </p>
               <p>
                 In 2023, her 30 Computer Studies candidates at Starehe Boys Centre achieved a{' '}
-                <strong className="text-foreground">perfect KCSE score of A grade 12.00</strong> — earning her the
+                <strong className="text-foreground">perfect National Examination score of A grade 12.00</strong> — earning her the
                 Teacher of the Year award. She is a certified member of the Kenya Teachers Service
                 Commission and an active advocate for child online protection and digital literacy.
               </p>

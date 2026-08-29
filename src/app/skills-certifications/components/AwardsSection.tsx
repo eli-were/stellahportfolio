@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const awards = [
   {
@@ -28,8 +28,14 @@ const awards = [
 
 export default function AwardsSection() {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const observers: IntersectionObserver[] = [];
     refs.current.forEach((el, i) => {
       if (!el) return;
@@ -37,18 +43,18 @@ export default function AwardsSection() {
         ([entry]) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
-            }, i * 100);
+              if (el) { el.classList.add('skill-card-visible'); }
+            }, i * 120);
             obs.disconnect();
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.05 }
       );
       obs.observe(el);
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="py-20 px-4 sm:px-6 bg-secondary" aria-labelledby="awards-heading">
@@ -64,15 +70,10 @@ export default function AwardsSection() {
             <div
               key={award.title}
               ref={(el) => { refs.current[i] = el; }}
-              className={`rounded-2xl p-6 md:p-8 border flex flex-col sm:flex-row gap-5 hover-lift ${
+              className={`rounded-2xl p-6 md:p-8 border flex flex-col sm:flex-row gap-5 hover-lift skill-card${mounted ? '' : ' skill-card-visible'} ${
                 award.highlight
-                  ? 'bg-accent/8 border-accent/25' :'bg-card border-border'
+                  ? 'bg-accent/8 border-accent/25' : 'bg-card border-border'
               }`}
-              style={{
-                opacity: 0,
-                transform: 'translateY(24px)',
-                transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)`,
-              }}
             >
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
                 award.highlight

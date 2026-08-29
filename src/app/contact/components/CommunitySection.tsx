@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const community = [
   {
@@ -18,7 +18,7 @@ const community = [
     org: 'Kenya Science and Engineering Fair',
     role: 'Member',
     description:
-      'Active member supporting Kenya\'s premier platform for student innovation in science and engineering — promoting STEM participation at the national level.',
+      "Active member supporting Kenya's premier platform for student innovation in science and engineering — promoting STEM participation at the national level.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -40,8 +40,14 @@ const community = [
 
 export default function CommunitySection() {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const observers: IntersectionObserver[] = [];
     refs.current.forEach((el, i) => {
       if (!el) return;
@@ -49,18 +55,18 @@ export default function CommunitySection() {
         ([entry]) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
-            }, i * 100);
+              if (el) { el.classList.add('skill-card-visible'); }
+            }, i * 120);
             obs.disconnect();
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.05 }
       );
       obs.observe(el);
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="py-20 px-4 sm:px-6 bg-secondary" aria-labelledby="community-heading">
@@ -78,12 +84,7 @@ export default function CommunitySection() {
             <div
               key={item.org}
               ref={(el) => { refs.current[i] = el; }}
-              className="bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 hover-lift"
-              style={{
-                opacity: 0,
-                transform: 'translateY(24px)',
-                transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)`,
-              }}
+              className={`bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 hover-lift skill-card${mounted ? '' : ' skill-card-visible'}`}
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center text-primary">
                 {item.icon}

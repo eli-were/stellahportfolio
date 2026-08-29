@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const certifications = [
   {
@@ -43,8 +43,14 @@ const certifications = [
 
 export default function CertificationsSection() {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const observers: IntersectionObserver[] = [];
     refs.current.forEach((el, i) => {
       if (!el) return;
@@ -52,18 +58,18 @@ export default function CertificationsSection() {
         ([entry]) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
-            }, i * 100);
+              if (el) { el.classList.add('skill-card-visible'); }
+            }, i * 120);
             obs.disconnect();
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.05 }
       );
       obs.observe(el);
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="py-20 px-4 sm:px-6 bg-secondary" aria-labelledby="certs-heading">
@@ -79,21 +85,16 @@ export default function CertificationsSection() {
             <div
               key={cert.title}
               ref={(el) => { refs.current[i] = el; }}
-              className={`rounded-2xl p-6 border flex flex-col gap-4 hover-lift ${
+              className={`rounded-2xl p-6 border flex flex-col gap-4 hover-lift skill-card${mounted ? '' : ' skill-card-visible'} ${
                 cert.accent
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'bg-card border-border'
               }`}
-              style={{
-                opacity: 0,
-                transform: 'translateY(24px)',
-                transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)`,
-              }}
             >
               <div
                 className={`w-12 h-12 rounded-xl flex items-center justify-center border ${
                   cert.accent
-                    ? 'bg-white/15 border-white/20 text-white' :'bg-primary/10 border-primary/15 text-primary'
+                    ? 'bg-white/15 border-white/20 text-white' : 'bg-primary/10 border-primary/15 text-primary'
                 }`}
               >
                 {cert.icon}

@@ -3,8 +3,8 @@ import React from 'react';
 const stats = [
   { value: '4+', label: 'Years Experience', sub: 'Form 1–4 learners' },
   { value: '160+', label: 'Students Trained', sub: 'IoT & Robotics' },
-  { value: 'A 12.00', label: 'KCSE 2023 Score', sub: '30 candidates, perfect grade' },
-  { value: '4', label: 'Schools Served', sub: 'Nairobi County' },
+  { value: 'A 12.00', label: 'National  2023 Examination Score', sub: '30 candidates, perfect grade' },
+  { value: '4', label: 'Location of Schools Served', sub: 'KENYA' },
 ];
 
 export default function StatsBar() {

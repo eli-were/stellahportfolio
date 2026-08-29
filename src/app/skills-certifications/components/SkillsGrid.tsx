@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const skillCategories = [
   {
@@ -11,7 +11,6 @@ const skillCategories = [
       </svg>
     ),
     skills: ['Python', 'Arduino', 'HTML', 'Scratch'],
-    span: 'col-span-1',
   },
   {
     category: 'Emerging Technologies',
@@ -21,7 +20,6 @@ const skillCategories = [
       </svg>
     ),
     skills: ['Internet of Things (IoT)', 'Generative AI', 'Robotics', 'Arduino Programming'],
-    span: 'col-span-1',
   },
   {
     category: 'Data Analytics & Management',
@@ -31,7 +29,6 @@ const skillCategories = [
       </svg>
     ),
     skills: ['Google Analytics', 'SEMrush', 'MySQL', 'Google Sheets', 'Sprout Social'],
-    span: 'col-span-1',
   },
   {
     category: 'Pedagogical Tools & Platforms',
@@ -41,14 +38,19 @@ const skillCategories = [
       </svg>
     ),
     skills: ['Google Classroom', 'Curipod', 'Zeraki Analytics', 'CBC Curriculum', 'Inquiry-Based Learning'],
-    span: 'col-span-1',
   },
 ];
 
 export default function SkillsGrid() {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const observers: IntersectionObserver[] = [];
     refs.current.forEach((el, i) => {
       if (!el) return;
@@ -57,20 +59,19 @@ export default function SkillsGrid() {
           if (entry.isIntersecting) {
             setTimeout(() => {
               if (el) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
+                el.classList.add('skill-card-visible');
               }
-            }, i * 100);
+            }, i * 120);
             obs.disconnect();
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.05, rootMargin: '0px 0px 0px 0px' }
       );
       obs.observe(el);
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="py-20 px-4 sm:px-6 bg-background" aria-labelledby="skills-heading">
@@ -81,22 +82,12 @@ export default function SkillsGrid() {
           <span className="italic font-normal text-primary">Expertise.</span>
         </h2>
 
-        {/* BENTO GRID AUDIT:
-          Array has 4 cards: [Programming, EmergingTech, DataAnalytics, Pedagogical]
-          Row 1: [col-1: Programming cs-1] [col-2: EmergingTech cs-1] [col-3: DataAnalytics cs-1] [col-4: Pedagogical cs-1]
-          Placed 4/4 cards ✓
-        */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((cat, i) => (
             <div
               key={cat.category}
               ref={(el) => { refs.current[i] = el; }}
-              className="bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 hover-lift"
-              style={{
-                opacity: 0,
-                transform: 'translateY(24px)',
-                transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)`,
-              }}
+              className={`bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 hover-lift skill-card${mounted ? '' : ' skill-card-visible'}`}
             >
               {/* Icon */}
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/15">

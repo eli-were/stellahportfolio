@@ -1,26 +1,31 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function EducationSection() {
   const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const el = ref?.current;
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
+          el.classList.add('skill-card-visible');
           obs.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     );
     obs?.observe(el);
     return () => obs?.disconnect();
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="py-20 px-4 sm:px-6 bg-background" aria-labelledby="edu-heading">
@@ -33,12 +38,7 @@ export default function EducationSection() {
 
         <div
           ref={ref}
-          className="bg-card rounded-2xl border border-border p-8 md:p-12 max-w-2xl hover-lift"
-          style={{
-            opacity: 0,
-            transform: 'translateY(24px)',
-            transition: 'opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1)',
-          }}
+          className={`bg-card rounded-2xl border border-border p-8 md:p-12 max-w-2xl hover-lift skill-card${mounted ? '' : ' skill-card-visible'}`}
         >
           <div className="flex items-start gap-6">
             <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center text-primary flex-shrink-0">
@@ -51,7 +51,7 @@ export default function EducationSection() {
                 Bachelor of Education
               </p>
               <h3 className="font-display text-xl font-bold text-foreground tracking-tight mb-1">
-                Computer Science & Mathematics
+                Computer Science &amp; Mathematics
               </h3>
               <p className="text-sm font-semibold text-primary mb-1">University of Nairobi</p>
               <p className="text-xs text-muted-foreground mb-4">Nairobi, Kenya · September 2017</p>

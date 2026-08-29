@@ -7,9 +7,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     // Keep optimized local images in the cache for a week.
     minimumCacheTTL: 60 * 60 * 24 * 7,
@@ -17,3 +14,4 @@ const nextConfig = {
   },
 };
 export default nextConfig;
+
