@@ -9,7 +9,7 @@ export default function AboutBio() {
         <div className="relative">
           <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/10">
             <AppImage
-              src="/assets/images/about-potrait.jpeg"
+              src="/assets/images/about-portrait.jpg"
               alt="Stellah Akuku Were at a community event in Nairobi"
               fill
               className="object-cover"
