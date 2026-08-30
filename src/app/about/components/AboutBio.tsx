@@ -69,7 +69,7 @@ export default function AboutBio() {
           <div className="grid grid-cols-2 gap-4">
             {[
             { label: 'Location', value: 'Nairobi, Kenya' },
-            { label: 'Curriculum', value: 'KCSE & CBC' },
+            { label: 'Curriculum', value: 'National Examination & CBC' },
             { label: 'Subjects', value: 'Mathematics & Computer Science' },
             { label: 'Specialisation', value: 'IoT & Robotics' }]?.
             map((fact) =>

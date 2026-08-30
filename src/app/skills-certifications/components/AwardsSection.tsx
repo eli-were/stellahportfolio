@@ -7,7 +7,7 @@ const awards = [
     title: 'Teacher of the Year',
     year: '2023',
     description:
-      'Awarded for producing a perfect score — A grade 12.00 — in KCSE 2023 with 30 Computer Studies candidates at Starehe Boys Centre.',
+      'Awarded for producing a perfect score — A grade 12.00 — in National Examination 2023 with 30 Computer Studies candidates at Starehe Boys Centre.',
     highlight: true,
   },
   {

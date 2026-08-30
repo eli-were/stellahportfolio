@@ -6,9 +6,9 @@ const highlights = [
 {
   tag: 'Achievement',
   tagVariant: 'accent',
-  title: 'Perfect KCSE Score',
+  title: 'Perfect National Examination Score',
   description:
-  'Produced an A grade 12.00 in KCSE 2023 with 30 Computer Studies candidates at Starehe Boys Centre — through inquiry-based learning and data-driven personalized feedback.',
+  'Produced an A grade 12.00 in National Examination 2023 with 30 Computer Studies candidates at Starehe Boys Centre — through inquiry-based learning and data-driven personalized feedback.',
   image: '/assets/images/highlight-kcse.jpeg',
   imageAlt: 'Stellah receiving a certificate of merit at Starehe Boys Centre',
   link: '/experience',

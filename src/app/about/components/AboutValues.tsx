@@ -17,7 +17,7 @@ const values = [
       </svg>
     ),
     title: 'Proven Results',
-    desc: 'Thirty Computer Studies candidates earned an A grade of 12.00 in KCSE 2023 through steady practice, feedback, and close support.',
+    desc: 'Thirty Computer Studies candidates earned an A grade of 12.00 in National Examination 2023 through steady practice, feedback, and close support.',
   },
   {
     icon: (

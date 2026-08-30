@@ -67,15 +67,15 @@ const experiences = [
     id: 5,
     school: 'Home-School Tutor',
     location: 'Nairobi, Kenya',
-    role: 'Maths & Computer Science Tutor — K10–K12 (IGCSE & KCSE Preparation)',
+    role: 'Maths & Computer Science Tutor — K10–K12 (IGCSE & National Examination Preparation)',
     period: 'September – December 2018',
     current: false,
     color: 'muted',
     responsibilities: [
       'Leveraged AI tools like Curipod for online questions and Google Classroom for assignments to support teaching and learning of mathematics.',
-      'Developed individualised learning plans for students preparing for national (KCSE) and international (IGCSE) curricula.',
+      'Developed individualised learning plans for students preparing for National Examination and international (IGCSE) curricula.',
     ],
-    tags: ['IGCSE', 'KCSE', 'Curipod', 'Google Classroom'],
+    tags: ['IGCSE', 'National Examination', 'Curipod', 'Google Classroom'],
   },
 ];
 

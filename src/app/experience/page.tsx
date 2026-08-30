@@ -8,7 +8,7 @@ import ExperienceTimeline from '@/app/experience/components/ExperienceTimeline';
 export const metadata: Metadata = {
   title: 'Teaching Experience — Stellah Akuku Were',
   description:
-    'Full teaching and professional history of Stellah Akuku Were — from Starehe Boys Centre to Riara Springs, with KCSE results and STEM training impact.',
+    'Full teaching and professional history of Stellah Akuku Were — from Starehe Boys Centre to Riara Springs, with National Examination results and STEM training impact.',
   alternates: { canonical: '/experience' },
   openGraph: {
     title: 'Teaching Experience — Stellah Akuku Were',
