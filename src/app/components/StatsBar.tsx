@@ -1,7 +1,17 @@
 import React from 'react';
 
-const stats = [
-  { value: '4+', label: 'Years Experience', sub: 'Form 1–4, KS2–KS3, MYP/IBDP/A-Level' },
+interface StatItem {
+  value: string;
+  label: string;
+  sub: string | string[];
+}
+
+const stats: StatItem[] = [
+  {
+    value: '4+',
+    label: 'Years Experience',
+    sub: ['Form 1–4', 'KS2–KS3', 'MYP/IBDP/A-Level'],
+  },
   { value: '160+', label: 'Students Trained', sub: 'IoT & Robotics' },
   { value: 'A 12.00', label: 'National  2023 Examination Score', sub: '30 candidates, perfect grade' },
   { value: '4+', label: 'Location of Schools Served', sub: 'KENYA' },
@@ -15,7 +25,7 @@ export default function StatsBar() {
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-white/10">
-          {stats?.map((stat, i) => (
+          {stats?.map((stat) => (
             <div
               key={stat?.label}
               className="text-center md:text-left md:px-10 first:pl-0"
@@ -24,7 +34,15 @@ export default function StatsBar() {
                 {stat?.value}
               </div>
               <div className="text-sm font-semibold text-white/90 mb-0.5">{stat?.label}</div>
-              <div className="text-xs text-white/55">{stat?.sub}</div>
+              {Array.isArray(stat?.sub) ? (
+                <ul className="text-xs text-white/70 list-disc list-inside space-y-0.5 mt-1 text-left inline-block md:block">
+                  {stat.sub.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="text-xs text-white/55">{stat?.sub}</div>
+              )}
             </div>
           ))}
         </div>
@@ -32,3 +50,4 @@ export default function StatsBar() {
     </section>
   );
 }
+
